@@ -1,21 +1,33 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-import joblib
+import pandas as pd
+import numpy as np
+import joblib  # Assuming you're using a saved model
+
 
 app = FastAPI()
-model = joblib.load('models/churn_model.pkl')
 
-class Customer(BaseModel):
-    recency: int
-    frequency: int
-    monetary: float
 
-# Add this root endpoint
+# Load trained model
+model = joblib.load( r"E:\OneDrive\Desktop\Customer Retention Analysis\models\rfm_churn_model.pkl")
+
+
 @app.get("/")
-def read_root():
-    return {"status": "API is running", "endpoints": ["/predict_churn"]}
+def home():
+    return {"message": "Customer Retention Analysis API is running!"}
 
 @app.post("/predict_churn")
-def predict_churn(customer: Customer):
-    prediction = model.predict([[customer.recency, customer.frequency, customer.monetary]])
-    return {"churn_risk": int(prediction[0])}
+async def predict_churn(data: dict):
+    # Convert incoming JSON data to DataFrame
+    df = pd.DataFrame([data])
+
+    # Print to check column names before prediction
+    print("Received Data Format:", df.head())  # Debugging step
+
+    # Ensure correct feature names
+    df = df[['recency', 'frequency', 'monetary']]
+
+    # Predict churn probability
+    proba_output = model.predict_proba(df)
+
+    return {"churn_probability": proba_output[:, 1].tolist()}
+
