@@ -4,8 +4,12 @@
 This project analyzes customer retention patterns using cohort analysis and churn prediction modeling. The goal is to identify trends in customer behavior and predict churn likelihood based on historical purchase data.
 
 ## Project Structure
+- `1_data_cleaning.ipynb`: Cleans and preprocesses raw customer data for analysis.
 - `2_cohort_analysis.ipynb`: Performs cohort analysis to visualize customer retention trends.
+- `3_rfm_analysis.ipynb`: Conducts Recency-Frequency-Monetary (RFM) analysis for customer segmentation.
 - `4_churn_model.ipynb`: Builds a churn prediction model using machine learning.
+- `api/`: Contains API scripts for deploying the model.
+- `main.py`: Runs the API and serves predictions.
 - `data/processed/`: Contains preprocessed datasets used in the analysis.
 - `models/`: Stores trained machine learning models.
 
@@ -22,10 +26,26 @@ This project analyzes customer retention patterns using cohort analysis and chur
 3. Ensure data files (`merged_data.parquet`, `rfm_data.csv`) are present in `data/processed/`.
 4. Run the notebooks in sequence for insights and predictions.
 
+## Running the API
+1. Navigate to the project root and run the API:
+   ```bash
+   python main.py
+   ```
+2. If successful, the message **'API is running'** will be displayed.
+3. The API can be accessed via endpoints to get churn predictions or customer insights.
+
 ## Analysis Details
+### Data Cleaning
+- Handles missing values, duplicates, and inconsistent data formats.
+- Standardizes customer transaction data for accurate analysis.
+
 ### Cohort Analysis
 - Groups customers by first purchase month and tracks retention over time.
 - Uses a heatmap to visualize retention trends.
+
+### RFM Analysis
+- Segments customers based on Recency, Frequency, and Monetary value.
+- Helps identify key customer groups such as loyal customers, at-risk customers, and big spenders.
 
 ### Churn Prediction Model
 - Defines churn as customers who haven’t purchased in the last 90 days.
@@ -61,17 +81,17 @@ The project also includes customer segmentation based on purchasing behavior. Th
 - Final trained model is stored in `models/rfm_churn_model.pkl`.
 - API successfully serves predictions and insights.
 
-  ![image](https://github.com/user-attachments/assets/eb6ed40f-2ae2-4a93-bd28-e8c55b7be3ee)
+![image](https://github.com/user-attachments/assets/eb6ed40f-2ae2-4a93-bd28-e8c55b7be3ee)
 
-  ![image](https://github.com/user-attachments/assets/1a985ec5-8048-488b-8d1d-dcab589ca282)
+![image](https://github.com/user-attachments/assets/1a985ec5-8048-488b-8d1d-dcab589ca282)
 
-  ![image](https://github.com/user-attachments/assets/6540acba-4a3d-4108-a76b-14316455f149)
+![image](https://github.com/user-attachments/assets/6540acba-4a3d-4108-a76b-14316455f149)
 
 ## Next Steps
+- Improve model performance by fine-tuning hyperparameters.
+- Integrate results into a dashboard for business insights.
+- Expand API capabilities for real-time customer retention analysis.
 
- -Improve model performance by fine-tuning hyperparameters.
- -Integrate results into a dashboard for business insights.
- -Expand API capabilities for real-time customer retention analysis.
+For any questions, feel free to reach out!
 
 
-    For any questions, feel free to reach out!
