@@ -59,6 +59,7 @@ The project also includes customer segmentation based on purchasing behavior. Th
 ## Results
 - Churn probability predictions are saved in `rfm_churn_with_probabilities.csv`.
 - Final trained model is stored in `models/rfm_churn_model.pkl`.
+- API successfully serves predictions and insights.
 
   ![image](https://github.com/user-attachments/assets/eb6ed40f-2ae2-4a93-bd28-e8c55b7be3ee)
 
@@ -66,11 +67,11 @@ The project also includes customer segmentation based on purchasing behavior. Th
 
   ![image](https://github.com/user-attachments/assets/6540acba-4a3d-4108-a76b-14316455f149)
 
-
-
-
 ## Next Steps
-- Improve model performance by fine-tuning hyperparameters.
-- Integrate results into a dashboard for business insights.
 
-For any questions, feel free to reach out!
+ -Improve model performance by fine-tuning hyperparameters.
+ -Integrate results into a dashboard for business insights.
+ -Expand API capabilities for real-time customer retention analysis.
+
+
+    For any questions, feel free to reach out!
