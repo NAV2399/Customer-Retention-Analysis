@@ -62,6 +62,12 @@ The project also includes customer segmentation based on purchasing behavior. Th
 
   ![image](https://github.com/user-attachments/assets/eb6ed40f-2ae2-4a93-bd28-e8c55b7be3ee)
 
+  ![image](https://github.com/user-attachments/assets/1a985ec5-8048-488b-8d1d-dcab589ca282)
+
+  ![image](https://github.com/user-attachments/assets/6540acba-4a3d-4108-a76b-14316455f149)
+
+
+
 
 ## Next Steps
 - Improve model performance by fine-tuning hyperparameters.
